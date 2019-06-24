@@ -33,7 +33,7 @@ import { Toast } from 'mint-ui'
 export default {
     data(){
         return {
-            msg:"hello world!"
+            msg:"hello world!哈哈"
         }
     },
     methods: {
