@@ -48,23 +48,7 @@ export default {
 </script>
 
 <style scoped>
-    @font-face {
-    font-family: 'iconfont';
-        src: url('../static/font_1nq1s74vfvs/iconfont.eot');
-        src: url('../static/font_1nq1s74vfvs/iconfont.eot?#iefix') format('embedded-opentype'),
-            url('../static/font_1nq1s74vfvs/iconfont.woff2') format('woff2'),
-            url('../static/font_1nq1s74vfvs/iconfont.woff') format('woff'),
-            url('../static/font_1nq1s74vfvs/iconfont.ttf') format('truetype'),
-            url('../static/font_1nq1s74vfvs/iconfont.svg#iconfont') format('svg');
-    }
 
-    .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 23px;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
     .hello {
         color:red;
     }
