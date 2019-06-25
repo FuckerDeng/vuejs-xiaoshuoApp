@@ -35,6 +35,26 @@ import '../static/css/site.css'
 // 有了Vue.config.productionTip = false这句代码，它会阻止你显示显示生产模式的消息
 Vue.config.productionTip = false
 
+// 10.导入anxios网络请求库（cnpm install axios -S -D）
+import axios from 'axios'
+Vue.prototype.$axios = axios
+    // 设置此属性，表示用axios访问的链接前面都会加上这个
+axios.defaults.baseURL = '/api'
+    // 表示传输的都是json字符串
+axios.defaults.headers.post['Content-Type'] = 'application/json'
+    // axios解决跨域问题：在config文件夹的index.js中,proxyTable中进行如下配置：
+    // 用axios访问的链接会在前面加上 /api ,访问时，被config中index文件拦截，将
+    // /api 替换成target 对应的字符串
+    /**
+    '/api':{
+        target: "http://localhost:8080",
+        changeOrigin:true,
+        pathRewrite:{
+            '/api':''
+        }
+    }
+    */
+
 let router = new vueRouter({
     // tabbar使用的是mui的组件，此组件的连接被点击时会自动添加一个mui-active类，使点击的
     // 链接字体颜色改变，而vue的路由链接激活（被点击）后，会自动添加一个 router-link-active类

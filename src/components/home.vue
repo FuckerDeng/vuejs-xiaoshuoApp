@@ -14,11 +14,23 @@ export default {
     data(){
         return {
             lunbo:[
-                "../../static/imgs/muwu.jpg",
-                "../../static/imgs/shuijiao.jpg",
-                "../../static/imgs/yuantiao.jpg"
             ]
         };
+    },
+    created(){
+        this.getLunBo()
+    },
+    methods:{
+        getLunBo(){
+            this.$axios.get("/getLunBo").then((res) => {
+                let urls = res.data.split(",")
+                for(let i = 0;i<urls.length;i++){
+                    this.lunbo.push(urls[i])
+                }
+            }).catch((err) => {
+              console.log(err)  
+            })
+        }
     }
 };
 </script>
